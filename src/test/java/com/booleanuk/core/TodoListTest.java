@@ -28,4 +28,19 @@ class TodoListTest {
         }};
         Assertions.assertFalse(todoList.add(tasks, "Lunch"));
     }
+
+    @Test
+    public void testListAllTasks() {
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>() {{
+            put("Tidy up", false);
+            put("Finish task", false);
+            put("Lunch", true);
+        }};
+        Assertions.assertEquals(false, todoList.listTasks(tasks, "Tidy up"));
+        Assertions.assertEquals(false, todoList.listTasks(tasks, "Finish task"));
+        Assertions.assertEquals(true, todoList.listTasks(tasks, "Lunch"));
+    }
+
+
 }

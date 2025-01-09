@@ -14,6 +14,12 @@ public class TodoList {
     }
 
     public String listTasks(HashMap<String, Boolean> tasks) {
-        return tasks.keySet().toString();
+        String output = "";
+        if (tasks.isEmpty()) {
+            output = "Todo-list is empty";
+            return output;
+        }
+        output = tasks.keySet().toString();
+        return output;
     }
 }

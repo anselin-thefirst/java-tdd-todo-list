@@ -1,6 +1,7 @@
 package com.booleanuk.core;
 
 import java.util.HashMap;
+// import java.util.Map;
 
 public class TodoList {
 
@@ -36,4 +37,13 @@ public class TodoList {
         }
         return false;
     }
+
+    /*public String listCompletedTasks(HashMap<String, Boolean> tasks) {
+        HashMap<String, Boolean> completedTasks;
+        for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
+            if (task.getKey().equals(true)) {
+                completedTasks.put(task.getKey(), true);
+            }
+        }
+    }*/
 }

@@ -56,7 +56,7 @@ class TodoListTest {
         }};
         Assertions.assertTrue(todoList.updateTaskStatus(tasks, "Tidy up"));
         Assertions.assertTrue(todoList.updateTaskStatus(tasks, "Lunch"));
-
+        Assertions.assertFalse(todoList.updateTaskStatus(tasks, "Finish task"));
     }
 
 }

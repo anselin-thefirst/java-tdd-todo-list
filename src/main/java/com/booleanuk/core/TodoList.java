@@ -26,6 +26,11 @@ public class TodoList {
     public Boolean updateTaskStatus(HashMap<String, Boolean> tasks, String name) {
         if (tasks.get(name).equals(false)) {
             tasks.put(name, true);
+            System.out.println(tasks.entrySet());
+            return true;
+        } else if (tasks.get(name).equals(true)) {
+            tasks.put(name, false);
+            System.out.println(tasks.entrySet());
             return true;
         }
         return false;

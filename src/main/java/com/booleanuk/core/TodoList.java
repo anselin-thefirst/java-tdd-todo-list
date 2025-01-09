@@ -12,4 +12,8 @@ public class TodoList {
         }
         return false;
     }
+
+    public String listTasks(HashMap<String, Boolean> tasks) {
+        return tasks.keySet().toString();
+    }
 }

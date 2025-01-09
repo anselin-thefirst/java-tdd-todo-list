@@ -59,4 +59,15 @@ class TodoListTest {
         Assertions.assertFalse(todoList.updateTaskStatus(tasks, "Finish task"));
     }
 
+    @Test
+    public void testListCompletedTasks() {
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>() {{
+            put("Tidy up", false);
+            put("Finish task", false);
+            put("Lunch", true);
+        }};
+        Assertions.assertEquals("[Lunch]", todoList.listCompletedTasks(tasks));
+    }
+
 }

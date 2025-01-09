@@ -17,4 +17,15 @@ class TodoListTest {
         }};
         Assertions.assertTrue(todoList.add(tasks, "Sleep"));
     }
+
+    @Test
+    public void testAddOldTaskToList() {
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>() {{
+            put("Tidy up", false);
+            put("Finish task", false);
+            put("Lunch", true);
+        }};
+        Assertions.assertFalse(todoList.add(tasks, "Lunch"));
+    }
 }

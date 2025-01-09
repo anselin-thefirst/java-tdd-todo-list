@@ -40,5 +40,10 @@ class TodoListTest {
         Assertions.assertEquals("[Tidy up, Finish task, Lunch]", todoList.listTasks(tasks));
     }
 
-
+    @Test
+    public void testListNoTask() {
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>();
+        Assertions.assertEquals("Todo-list is empty", todoList.listTasks(tasks));
+    }
 }

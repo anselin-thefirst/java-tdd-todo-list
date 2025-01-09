@@ -37,9 +37,7 @@ class TodoListTest {
             put("Finish task", false);
             put("Lunch", true);
         }};
-        Assertions.assertEquals(false, todoList.listTasks(tasks, "Tidy up"));
-        Assertions.assertEquals(false, todoList.listTasks(tasks, "Finish task"));
-        Assertions.assertEquals(true, todoList.listTasks(tasks, "Lunch"));
+        Assertions.assertEquals("Tidy up, Finish task, Lunch", todoList.listTasks(tasks));
     }
 
 

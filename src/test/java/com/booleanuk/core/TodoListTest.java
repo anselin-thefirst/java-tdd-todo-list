@@ -7,15 +7,14 @@ import java.util.HashMap;
 
 class TodoListTest {
 
-    HashMap<String, Boolean> tasks = new HashMap<>() {{
-        put("Tidy up", false);
-        put("Finish task", false);
-        put("Lunch", true);
-    }};
-
     @Test
     public void testAddNewTaskToList() {
-        tasks.put("Sleep", false);
-        Assertions.assertTrue(true);
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>() {{
+            put("Tidy up", false);
+            put("Finish task", false);
+            put("Lunch", true);
+        }};
+        Assertions.assertTrue(todoList.add(tasks, "Sleep"));
     }
 }

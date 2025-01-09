@@ -46,4 +46,13 @@ class TodoListTest {
         HashMap<String, Boolean> tasks = new HashMap<>();
         Assertions.assertEquals("Todo-list is empty", todoList.listTasks(tasks));
     }
+
+    @Test
+    public void testUpdateTaskStatusFalseToTrue() {
+        TodoList todoList = new TodoList();
+        HashMap<String, Boolean> tasks = new HashMap<>() {{
+            put("Tidy up", false);
+        }};
+        Assertions.assertTrue(todoList.updateTaskStatus(tasks, "Tidy up"));
+    }
 }

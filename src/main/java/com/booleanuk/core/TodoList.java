@@ -72,6 +72,9 @@ public class TodoList {
 
     public String removeTask(String task) {
         tasks.remove(task);
-        return "Task removed successfully";
+        if (!tasks.containsKey(task)) {
+            return "Task removed successfully";
+        }
+        return "Could not remove task";
     }
 }

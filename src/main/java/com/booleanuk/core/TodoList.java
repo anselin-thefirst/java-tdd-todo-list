@@ -1,7 +1,6 @@
 package com.booleanuk.core;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TodoList {
     private HashMap<String, Boolean> tasks;
@@ -79,5 +78,15 @@ public class TodoList {
             return "Task removed successfully";
         }
         return "Could not remove task";
+    }
+
+    public String listAscending() {
+        StringBuilder ascending = new StringBuilder();
+        List<String> tasksNames = new ArrayList<>(tasks.keySet());
+        Collections.sort(tasksNames);
+        for (String task : tasksNames) {
+            ascending.append(task).append(", ");
+        }
+        return ascending.toString();
     }
 }

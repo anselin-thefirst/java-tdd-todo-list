@@ -62,4 +62,8 @@ class TodoListTest {
         Assertions.assertEquals("Task could not be found", todoList.searchForTask("Shower"));
     }
 
+    @Test
+    public void testRemoveTask() {
+        Assertions.assertEquals("Task removed successfully", todoList.removeTask());
+    }
 }

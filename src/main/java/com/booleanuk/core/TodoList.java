@@ -69,4 +69,9 @@ public class TodoList {
         }
         return "Here's your task: " + task;
     }
+
+    public String removeTask(String task) {
+        tasks.remove(task);
+        return "Task removed successfully";
+    }
 }

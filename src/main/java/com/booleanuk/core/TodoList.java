@@ -43,23 +43,29 @@ public class TodoList {
     }
 
     public String listCompletedTasks() {
-        StringBuilder completed = new StringBuilder();
-        for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
-            if (task.getValue()) {
-                completed.append(task.getKey()).append(", ");
+        if (tasks.containsValue(true)) {
+            StringBuilder completed = new StringBuilder();
+            for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
+                if (task.getValue()) {
+                    completed.append(task.getKey()).append(", ");
+                }
             }
+            return completed.toString();
         }
-        return completed.toString();
+        return "You have no completed tasks";
     }
 
     public String listNotCompletedTasks() {
-        StringBuilder completed = new StringBuilder();
-        for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
-            if (! task.getValue()) {
-                completed.append(task.getKey()).append(", ");
+        if (tasks.containsValue(false)) {
+            StringBuilder completed = new StringBuilder();
+            for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
+                if (!task.getValue()) {
+                    completed.append(task.getKey()).append(", ");
+                }
             }
+            return completed.toString();
         }
-        return completed.toString();
+        return "You have no incomplete tasks";
     }
 
     public String searchForTask(String task) {

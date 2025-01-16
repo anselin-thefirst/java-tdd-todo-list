@@ -50,11 +50,15 @@ class TodoListTest {
     @Test
     public void testListCompletedTasks() {
         Assertions.assertEquals("Lunch, ", todoList.listCompletedTasks());
+        todoList.removeTask("Lunch");
+        Assertions.assertEquals("You have no completed tasks", todoList.listCompletedTasks());
     }
 
     @Test
     public void testListNotCompletedTasks() {
         Assertions.assertEquals("Tidy up, ", todoList.listNotCompletedTasks());
+        todoList.removeTask("Tidy up");
+        Assertions.assertEquals("You have no incomplete tasks", todoList.listNotCompletedTasks());
     }
 
     @Test

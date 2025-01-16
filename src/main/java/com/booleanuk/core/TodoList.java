@@ -71,6 +71,9 @@ public class TodoList {
     }
 
     public String removeTask(String task) {
+        if (!tasks.containsKey(task)) {
+            return "This task is not on your todolist";
+        }
         tasks.remove(task);
         if (!tasks.containsKey(task)) {
             return "Task removed successfully";

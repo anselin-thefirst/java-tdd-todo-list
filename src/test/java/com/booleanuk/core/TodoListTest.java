@@ -65,5 +65,6 @@ class TodoListTest {
     @Test
     public void testRemoveTask() {
         Assertions.assertEquals("Task removed successfully", todoList.removeTask("Lunch"));
+        Assertions.assertEquals("This task is not on your todolist", todoList.removeTask("Shower"));
     }
 }

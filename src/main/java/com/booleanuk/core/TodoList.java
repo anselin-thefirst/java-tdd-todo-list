@@ -62,4 +62,11 @@ public class TodoList {
         }
         return completed.toString();
     }
+
+    public String searchForTask(String task) {
+        if (!tasks.containsKey(task)) {
+            return "Task could not be found";
+        }
+        return "Here's your task: " + task;
+    }
 }

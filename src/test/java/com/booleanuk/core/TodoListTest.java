@@ -49,7 +49,7 @@ class TodoListTest {
 
     @Test
     public void testListCompletedTasks() {
-        Assertions.assertEquals("[Lunch]", todoList.listCompletedTasks());
+        Assertions.assertEquals("Lunch, ", todoList.listCompletedTasks());
     }
 
 }

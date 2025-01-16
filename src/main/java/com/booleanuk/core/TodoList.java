@@ -52,4 +52,14 @@ public class TodoList {
         }
         return completed.toString();
     }
+
+    public String listNotCompletedTasks() {
+        StringBuilder completed = new StringBuilder();
+        for (Map.Entry<String, Boolean> task : tasks.entrySet()) {
+            if (! task.getValue()) {
+                completed.append(task.getKey()).append(", ");
+            }
+        }
+        return completed.toString();
+    }
 }

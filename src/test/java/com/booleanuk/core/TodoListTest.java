@@ -72,4 +72,9 @@ class TodoListTest {
     public void testListsAscending() {
         Assertions.assertEquals("Lunch, Tidy up, ", todoList.listAscending());
     }
+
+    @Test
+    public void testListsDescending() {
+        Assertions.assertEquals("Tidy up, Lunch, ", todoList.listDescending());
+    }
 }

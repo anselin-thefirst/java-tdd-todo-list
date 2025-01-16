@@ -52,4 +52,9 @@ class TodoListTest {
         Assertions.assertEquals("Lunch, ", todoList.listCompletedTasks());
     }
 
+    @Test
+    public void testListNotCompletedTasks() {
+        Assertions.assertEquals("Tidy up, ", todoList.listNotCompletedTasks());
+    }
+
 }

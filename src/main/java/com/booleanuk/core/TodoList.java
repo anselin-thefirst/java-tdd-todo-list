@@ -89,4 +89,14 @@ public class TodoList {
         }
         return ascending.toString();
     }
+
+    public String listDescending() {
+        StringBuilder ascending = new StringBuilder();
+        List<String> tasksNames = new ArrayList<>(tasks.keySet());
+        Collections.sort(tasksNames, Collections.reverseOrder());
+        for (String task : tasksNames) {
+            ascending.append(task).append(", ");
+        }
+        return ascending.toString();
+    }
 }

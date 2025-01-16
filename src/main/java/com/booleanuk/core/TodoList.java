@@ -87,22 +87,28 @@ public class TodoList {
     }
 
     public String listAscending() {
-        StringBuilder ascending = new StringBuilder();
-        List<String> tasksNames = new ArrayList<>(tasks.keySet());
-        Collections.sort(tasksNames);
-        for (String task : tasksNames) {
-            ascending.append(task).append(", ");
+        if (!tasks.isEmpty()) {
+            StringBuilder ascending = new StringBuilder();
+            List<String> tasksNames = new ArrayList<>(tasks.keySet());
+            Collections.sort(tasksNames);
+            for (String task : tasksNames) {
+                ascending.append(task).append(", ");
+            }
+            return ascending.toString();
         }
-        return ascending.toString();
+        return "Your todolist is empty";
     }
 
     public String listDescending() {
-        StringBuilder ascending = new StringBuilder();
-        List<String> tasksNames = new ArrayList<>(tasks.keySet());
-        Collections.sort(tasksNames, Collections.reverseOrder());
-        for (String task : tasksNames) {
-            ascending.append(task).append(", ");
+        if (!tasks.isEmpty()) {
+            StringBuilder ascending = new StringBuilder();
+            List<String> tasksNames = new ArrayList<>(tasks.keySet());
+            Collections.sort(tasksNames, Collections.reverseOrder());
+            for (String task : tasksNames) {
+                ascending.append(task).append(", ");
+            }
+            return ascending.toString();
         }
-        return ascending.toString();
+        return "Your todolist is empty";
     }
 }

@@ -75,10 +75,16 @@ class TodoListTest {
     @Test
     public void testListsAscending() {
         Assertions.assertEquals("Lunch, Tidy up, ", todoList.listAscending());
+        todoList.removeTask("Lunch");
+        todoList.removeTask("Tidy up");
+        Assertions.assertEquals("Your todolist is empty", todoList.listAscending());
     }
 
     @Test
     public void testListsDescending() {
         Assertions.assertEquals("Tidy up, Lunch, ", todoList.listDescending());
+        todoList.removeTask("Lunch");
+        todoList.removeTask("Tidy up");
+        Assertions.assertEquals("Your todolist is empty", todoList.listDescending());
     }
 }

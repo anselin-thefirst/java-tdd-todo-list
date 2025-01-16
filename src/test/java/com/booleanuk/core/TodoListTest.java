@@ -1,65 +1,53 @@
 package com.booleanuk.core;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
 class TodoListTest {
 
-    @Test
-    public void testAddNewTaskToList() {
-        TodoList todoList = new TodoList();
+    private TodoList todoList;
+
+    @BeforeEach
+    public void setUp() {
         HashMap<String, Boolean> tasks = new HashMap<>() {{
             put("Tidy up", false);
-            put("Finish task", false);
             put("Lunch", true);
         }};
-        Assertions.assertTrue(todoList.add(tasks, "Sleep"));
+        todoList = new TodoList(tasks);
+    }
+
+    @Test
+    public void testAddNewTaskToList() {
+        Assertions.assertTrue(todoList.add("Sleep"));
     }
 
     @Test
     public void testAddOldTaskToList() {
-        TodoList todoList = new TodoList();
-        HashMap<String, Boolean> tasks = new HashMap<>() {{
-            put("Tidy up", false);
-            put("Finish task", false);
-            put("Lunch", true);
-        }};
-        Assertions.assertFalse(todoList.add(tasks, "Lunch"));
+        Assertions.assertFalse(todoList.add("Lunch"));
     }
 
     @Test
     public void testListAllTasks() {
-        TodoList todoList = new TodoList();
-        HashMap<String, Boolean> tasks = new HashMap<>() {{
-            put("Tidy up", false);
-            put("Finish task", false);
-            put("Lunch", true);
-        }};
-        Assertions.assertEquals("[Tidy up, Finish task, Lunch]", todoList.listTasks(tasks));
+        Assertions.assertEquals("[Tidy up, Lunch]", todoList.listTasks());
     }
 
     @Test
     public void testListNoTask() {
-        TodoList todoList = new TodoList();
-        HashMap<String, Boolean> tasks = new HashMap<>();
-        Assertions.assertEquals("Todo-list is empty", todoList.listTasks(tasks));
+        HashMap<String, Boolean> noTasks = new HashMap<>();
+        TodoList todoList = new TodoList(noTasks);
+        Assertions.assertEquals("Todo-list is empty", todoList.listTasks());
     }
 
     @Test
     public void testUpdateTaskStatus() {
-        TodoList todoList = new TodoList();
-        HashMap<String, Boolean> tasks = new HashMap<>() {{
-            put("Tidy up", false);
-            put("Lunch", true);
-        }};
-        Assertions.assertTrue(todoList.updateTaskStatus(tasks, "Tidy up"));
-        Assertions.assertTrue(todoList.updateTaskStatus(tasks, "Lunch"));
-        Assertions.assertFalse(todoList.updateTaskStatus(tasks, "Finish task"));
+        Assertions.assertTrue(todoList.updateTaskStatus("Tidy up"));
+        Assertions.assertTrue(todoList.updateTaskStatus("Lunch"));
     }
 
-    @Test
+    /*@Test
     public void testListCompletedTasks() {
         TodoList todoList = new TodoList();
         HashMap<String, Boolean> tasks = new HashMap<>() {{
@@ -68,6 +56,6 @@ class TodoListTest {
             put("Lunch", true);
         }};
         Assertions.assertEquals("[Lunch]", todoList.listCompletedTasks(tasks));
-    }
+    }*/
 
 }

@@ -4,8 +4,13 @@ import java.util.HashMap;
 // import java.util.Map;
 
 public class TodoList {
+    private HashMap<String, Boolean> tasks;
 
-    public Boolean add(HashMap<String, Boolean> tasks, String name) {
+    public TodoList(HashMap<String, Boolean> tasks) {
+        this.tasks = new HashMap<>(tasks);
+    }
+
+    public Boolean add(String name) {
         Boolean status = false;
         if (!tasks.containsKey(name)) {
             tasks.put(name, status);
@@ -14,7 +19,7 @@ public class TodoList {
         return false;
     }
 
-    public String listTasks(HashMap<String, Boolean> tasks) {
+    public String listTasks() {
         String output;
         if (tasks.isEmpty()) {
             output = "Todo-list is empty";
@@ -24,7 +29,7 @@ public class TodoList {
         return output;
     }
 
-    public Boolean updateTaskStatus(HashMap<String, Boolean> tasks, String name) {
+    public Boolean updateTaskStatus(String name) {
         if (!tasks.containsKey(name)) {
             return false;
         }

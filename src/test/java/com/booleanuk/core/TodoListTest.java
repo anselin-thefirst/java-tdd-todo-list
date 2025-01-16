@@ -57,4 +57,9 @@ class TodoListTest {
         Assertions.assertEquals("Tidy up, ", todoList.listNotCompletedTasks());
     }
 
+    @Test
+    public void testSearchForTask() {
+        Assertions.assertEquals("Task could not be found", todoList.searchForTask("Shower"));
+    }
+
 }

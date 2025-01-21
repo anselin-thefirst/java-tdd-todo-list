@@ -35,4 +35,11 @@ public class ExtensionTodoListTest {
         Assertions.assertTrue(todoList.updateTaskStatus(0));
         Assertions.assertFalse(todoList.updateTaskStatus(1));
     }
+
+    @Test
+    public void testShowDateTime() {
+        ArrayList<Task> empty = new ArrayList<>();
+        ExtensionTodoList emptyTodoList = new ExtensionTodoList(empty);
+        Assertions.assertEquals("Todolist is empty", emptyTodoList.showDateTime());
+    }
 }

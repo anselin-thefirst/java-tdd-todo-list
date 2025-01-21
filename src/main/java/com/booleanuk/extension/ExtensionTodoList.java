@@ -36,4 +36,12 @@ public class ExtensionTodoList {
         task.setStatus(false);
         return task.isStatus();
     }
+
+    public String showDateTime() {
+        StringBuilder output = new StringBuilder();
+         if (this.tasks.isEmpty()) {
+             return "Todolist is empty";
+         }
+         return null;
+    }
 }

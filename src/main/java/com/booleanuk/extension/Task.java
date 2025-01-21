@@ -7,11 +7,12 @@ public class Task {
     private boolean status;
     private String time;
 
-    public Task(String name, boolean status) {
+    public Task(String name, boolean status, String time) {
         this.id = nextId;
         nextId++;
         this.name = name;
         this.status = status;
+        this.time = time;
     }
 
     public int getId() {

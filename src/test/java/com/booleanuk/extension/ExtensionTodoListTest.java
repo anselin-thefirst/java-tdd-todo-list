@@ -12,8 +12,8 @@ public class ExtensionTodoListTest {
     @BeforeEach
     public void setUp() {
         ArrayList<Task> tasks = new ArrayList<>() {{
-            add(new Task("Eat", false));
-            add(new Task("Sleep", true));
+            add(new Task("Eat", false, "2025-01-19T10:00:00"));
+            add(new Task("Sleep", true, "2025-01-20T09:00:00"));
         }};
         todoList = new ExtensionTodoList(tasks);
     }
@@ -38,6 +38,7 @@ public class ExtensionTodoListTest {
 
     @Test
     public void testShowDateTime() {
+        Assertions.assertEquals("Task: Eat, Created on: 2025-01-19T10:00:00\nTask: Sleep, Created on: 2025-01-20T09:00:00\n", todoList.showDateTime());
         ArrayList<Task> empty = new ArrayList<>();
         ExtensionTodoList emptyTodoList = new ExtensionTodoList(empty);
         Assertions.assertEquals("Todolist is empty", emptyTodoList.showDateTime());

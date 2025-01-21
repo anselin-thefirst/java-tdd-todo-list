@@ -42,6 +42,9 @@ public class ExtensionTodoList {
          if (this.tasks.isEmpty()) {
              return "Todolist is empty";
          }
-         return null;
+         for (Task task : tasks) {
+             output.append("Task: ").append(task.getName()).append(", Created on: ").append(task.getTime()).append("\n");
+         }
+         return output.toString();
     }
 }

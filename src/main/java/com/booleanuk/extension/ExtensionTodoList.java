@@ -20,4 +20,10 @@ public class ExtensionTodoList {
         output = task.getName() + ", incomplete";
         return output;
     }
+
+    public String updateTaskName(int id, String name) {
+        Task task = this.tasks.get(id);
+        task.setName(name);
+        return "Task successfully updated to: " + task.getName();
+    }
 }

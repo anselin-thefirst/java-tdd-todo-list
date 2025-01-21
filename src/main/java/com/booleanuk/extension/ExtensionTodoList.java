@@ -11,17 +11,13 @@ public class ExtensionTodoList {
     }
 
     public String getTaskById(int id) {
-        String output = "";
-        String status = "";
-        for (Task task : this.tasks) {
-            if (task.getId() == id) {
-                if (task.isStatus()) {
-                    status = "completed";
-                }
-                output = task.getName() + ", " + status;
-                return output;
-            }
+        String output;
+        Task task = this.tasks.get(id);
+        if (task.isStatus()) {
+            output = task.getName() + ", completed";
+            return output;
         }
+        output = task.getName() + ", incomplete";
         return output;
     }
 }

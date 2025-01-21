@@ -20,6 +20,7 @@ public class ExtensionTodoListTest {
 
     @Test
     public void testGetTaskById() {
-        Assertions.assertEquals("Sleep, completed", todoList.getTaskById(2));
+        Assertions.assertEquals("Eat, incomplete", todoList.getTaskById(0));
+        Assertions.assertEquals("Sleep, completed", todoList.getTaskById(1));
     }
 }

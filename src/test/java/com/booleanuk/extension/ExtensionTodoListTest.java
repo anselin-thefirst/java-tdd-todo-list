@@ -29,4 +29,9 @@ public class ExtensionTodoListTest {
         Assertions.assertEquals("Task successfully updated to: Dinner", todoList.updateTaskName(0, "Dinner"));
         Assertions.assertEquals("Task successfully updated to: sleep", todoList.updateTaskName(1, "sleep"));
     }
+
+    @Test
+    public void testUpdateTaskStatus() {
+        Assertions.assertTrue(updateTaskStatus(0));
+    }
 }

@@ -31,18 +31,18 @@
 
 ## Extension TodoList class
 
-| Method                              | Member Variables | Scenario                                              | Result                      |
-|-------------------------------------|------------------|-------------------------------------------------------|-----------------------------|
-|                                     | ArrayList<Task>  |                                                       |                             |
-|                                     |                  |                                                       |                             |
-| getTaskById(int id)                 |                  | id exists                                             | success string              |
-|                                     |                  | id does not exist                                     | error string                |
-| updateTaskName(int id, String name) |                  | id exists                                             | success string              |
-|                                     |                  | id does not exist                                     | error string                |
-| updateTaskStatus(int id)            |                  | task exists and has requested status                  | true                        |
-|                                     |                  | task does not exist or does not have requested status | false                       |
-| showDateTime()                      |                  | list has tasks                                        | string of tasks             |
-|                                     |                  | last has no tasks                                     | string message for no tasks |
+| Method                              | Member Variables | Scenario                                 | Result                      |
+|-------------------------------------|------------------|------------------------------------------|-----------------------------|
+|                                     | ArrayList<Task>  |                                          |                             |
+|                                     |                  |                                          |                             |
+| getTaskById(int id)                 |                  | incomplete task                          | message string              |
+|                                     |                  | completed task                           | message string              |
+| updateTaskName(int id, String name) |                  | incomplete task                          | message string              |
+|                                     |                  | completed task                           | message string              |
+| updateTaskStatus(int id)            |                  | task exists and has been completed       | true                        |
+|                                     |                  | task exists and is not completed anymore | false                       |
+| showDateTime()                      |                  | list has tasks                           | string of tasks             |
+|                                     |                  | last has no tasks                        | string message for no tasks |
 
 ## Extension Task class
 

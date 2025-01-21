@@ -26,4 +26,14 @@ public class ExtensionTodoList {
         task.setName(name);
         return "Task successfully updated to: " + task.getName();
     }
+
+    public boolean updateTaskStatus(int id) {
+        Task task = this.tasks.get(id);
+        if (!task.isStatus()) {
+            task.setStatus(true);
+            return task.isStatus();
+        }
+        task.setStatus(false);
+        return task.isStatus();
+    }
 }

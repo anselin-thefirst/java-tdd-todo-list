@@ -32,6 +32,7 @@ public class ExtensionTodoListTest {
 
     @Test
     public void testUpdateTaskStatus() {
-        Assertions.assertTrue(updateTaskStatus(0));
+        Assertions.assertTrue(todoList.updateTaskStatus(0));
+        Assertions.assertFalse(todoList.updateTaskStatus(1));
     }
 }
